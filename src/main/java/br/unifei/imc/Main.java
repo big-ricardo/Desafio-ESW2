@@ -3,7 +3,9 @@ package br.unifei.imc;
 import br.unifei.imc.model.Aluno;
 import br.unifei.imc.model.Grupo;
 import br.unifei.imc.model.Menu;
+import br.unifei.imc.utils.CsvFile;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -11,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
 
         List<Aluno> alunos;
-        List<Grupo> grupos;
+        List<Grupo> grupos = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Bem vindo ao Sistema de gerenciador de grupos");
@@ -19,7 +21,7 @@ public class Main {
         System.out.println("Digite o nome e diretorio do arquivo CSV:");
         String path = scanner.nextLine();
 
-
+        alunos = CsvFile.readFile(path);
 
         do{
             System.out.println("1- Listar lista de alunos");
@@ -30,10 +32,12 @@ public class Main {
             System.out.println("Selecione uma opção:");
             int opcao = scanner.nextInt();
 
+
+
             switch (opcao) {
                 case 1:
                     System.out.println("Listar lista de alunos");
-
+                    Aluno.listStudents(alunos);
                     break;
                 case 2:
                     System.out.println("Listar lista de grupos");
