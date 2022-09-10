@@ -19,9 +19,9 @@ public class Main {
         System.out.println("Bem vindo ao Sistema de gerenciador de grupos");
 
         System.out.println("Digite o nome e diretorio do arquivo CSV:");
-        String path = scanner.nextLine();
+        //String path = scanner.nextLine();
 
-        alunos = CsvFile.readFile(path);
+        alunos = CsvFile.readFile("./teste.csv");
 
         do{
             System.out.println("1- Listar lista de alunos");
@@ -46,12 +46,13 @@ public class Main {
                     String matricula;
                     do{
                         System.out.println("Digite a matricula do aluno:");
-                        matricula = scanner.nextLine();1569
+                        matricula = scanner.nextLine();
                         Menu.criarGrupoHandler(alunos, grupos, grupo, matricula);
                     } while ( matricula != "0" );
                     break;
                 case 4:
                     System.out.println("Exportar dados no arquivo");
+                    CsvFile.createFile(Grupo.convertGrouposAlunos(grupos));
                     break;
                 default:
                     System.out.println("Opção inválida");

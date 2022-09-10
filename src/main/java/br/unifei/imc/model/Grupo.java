@@ -15,6 +15,18 @@ public class Grupo {
         this.nota = null;
     }
 
+    public static List<Aluno> convertGrouposAlunos(List<Grupo> grupos){
+        List<Aluno> alunosHash = new ArrayList<>();
+
+        grupos.forEach(grupo -> {
+            grupo.getAlunos().forEach(aluno -> {
+                alunosHash.add(aluno);
+            });
+        });
+
+        return alunosHash.stream().sorted().collect(Collectors.toList());
+    }
+
     public List<Aluno> getAlunos() {
         return alunos;
     }
