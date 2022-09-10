@@ -5,6 +5,8 @@ import br.unifei.imc.model.Grupo;
 import br.unifei.imc.model.Menu;
 import br.unifei.imc.utils.CsvFile;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -18,16 +20,18 @@ public class Main {
 
         System.out.println("Bem vindo ao Sistema de gerenciador de grupos");
 
-        System.out.println("Digite o nome e diretorio do arquivo CSV:");
-        //String path = scanner.nextLine();
+        System.out.println("Lista de alunos importada com sucesso!");
 
-        alunos = CsvFile.readFile("./teste.csv");
+        Path path = Paths.get("teste.csv");
+        alunos = CsvFile.readFile(path);
 
         do{
+            System.out.println("-------------------------\n");
             System.out.println("1- Listar lista de alunos");
             System.out.println("2- Listar lista de grupos");
             System.out.println("3- Criar grupo");
             System.out.println("4- Exportar dados no arquivo");
+            System.out.println("-------------------------\n");
 
             System.out.println("Selecione uma opção:");
             int opcao = scanner.nextInt();
