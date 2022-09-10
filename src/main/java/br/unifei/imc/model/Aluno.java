@@ -9,6 +9,9 @@ public class Aluno {
     private String matricula;
     private String nome;
 
+    public Aluno() {
+    }
+
     public Aluno(final String matricula, final String nome) {
         this.matricula = matricula;
         this.nome = nome;
