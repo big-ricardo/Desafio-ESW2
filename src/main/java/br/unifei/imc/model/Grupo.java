@@ -10,9 +10,16 @@ public class Grupo {
     private List<Aluno> alunos;
     private Double nota;
 
-    public Grupo() {
+    private int id;
+
+    public Grupo(int id) {
         this.alunos = new ArrayList<>();
         this.nota = null;
+        this.id = id;
+    }
+
+    public static void listGroups(List<Grupo> grupos){
+        grupos.forEach(grupo -> grupo.printInfo());
     }
 
     public static List<Aluno> convertGrouposAlunos(List<Grupo> grupos){
@@ -26,6 +33,8 @@ public class Grupo {
 
         return alunosHash;
     }
+
+
 
     public List<Aluno> getAlunos() {
         return alunos;
@@ -48,5 +57,12 @@ public class Grupo {
 
     public void addAluno(Aluno aluno) {
         this.alunos.add(aluno);
+    }
+
+    public void printInfo(){
+        System.out.println("Grupo"+ this.id);
+        alunos.forEach(aluno -> System.out.println(aluno.printInfos()));
+        System.out.println("Nota:" + this.nota);
+        System.out.println(3);
     }
 }

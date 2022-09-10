@@ -44,10 +44,11 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("Listar lista de grupos");
+                    Grupo.listGroups(grupos);
                     break;
                 case 3:
                     System.out.println("Criar grupo");
-                    var grupo = new Grupo();
+                    var grupo = new Grupo(grupos.size()+1);
                     String matricula;
                     do{
                         System.out.println("Digite a matricula do aluno:");
