@@ -2,15 +2,17 @@ package br.unifei.imc.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Grupo {
 
     private List<Aluno> alunos;
     private Double nota;
 
-    public Grupo(final List<Aluno> alunos, final Double nota) {
+    public Grupo() {
         this.alunos = new ArrayList<>();
-        this.nota = nota;
+        this.nota = null;
     }
 
     public List<Aluno> getAlunos() {
@@ -29,7 +31,7 @@ public class Grupo {
         this.nota = nota;
     }
 
-    public void addAluno(Aluno aluno){
-        alunos.add(aluno);
+    public void addAluno(Aluno aluno) {
+        this.alunos.add(aluno);
     }
 }

@@ -2,6 +2,7 @@ package br.unifei.imc;
 
 import br.unifei.imc.model.Aluno;
 import br.unifei.imc.model.Grupo;
+import br.unifei.imc.model.Menu;
 
 import java.util.List;
 import java.util.Scanner;
@@ -39,6 +40,13 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("Criar grupo");
+                    var grupo = new Grupo();
+                    String matricula;
+                    do{
+                        System.out.println("Digite a matricula do aluno:");
+                        matricula = scanner.nextLine();
+                        Menu.criarGrupoHandler(alunos, grupos, grupo, matricula);
+                    } while ( matricula != "0" );
                     break;
                 case 4:
                     System.out.println("Exportar dados no arquivo");
