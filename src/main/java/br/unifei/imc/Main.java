@@ -32,8 +32,6 @@ public class Main {
             System.out.println("Selecione uma opção:");
             int opcao = scanner.nextInt();
 
-
-
             switch (opcao) {
                 case 1:
                     System.out.println("Listar lista de alunos");
@@ -48,7 +46,7 @@ public class Main {
                     String matricula;
                     do{
                         System.out.println("Digite a matricula do aluno:");
-                        matricula = scanner.nextLine();
+                        matricula = scanner.nextLine();1569
                         Menu.criarGrupoHandler(alunos, grupos, grupo, matricula);
                     } while ( matricula != "0" );
                     break;
