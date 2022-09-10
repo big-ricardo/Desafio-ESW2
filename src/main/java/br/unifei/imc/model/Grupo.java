@@ -24,7 +24,7 @@ public class Grupo {
             });
         });
 
-        return alunosHash.stream().sorted().collect(Collectors.toList());
+        return alunosHash;
     }
 
     public List<Aluno> getAlunos() {

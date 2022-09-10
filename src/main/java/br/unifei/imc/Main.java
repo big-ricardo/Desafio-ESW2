@@ -22,7 +22,7 @@ public class Main {
 
         System.out.println("Lista de alunos importada com sucesso!");
 
-        Path path = Paths.get("teste.csv");
+        Path path = Paths.get("./teste.csv");
         alunos = CsvFile.readFile(path);
 
         do{
@@ -35,6 +35,7 @@ public class Main {
 
             System.out.println("Selecione uma opção:");
             int opcao = scanner.nextInt();
+            scanner.nextLine();
 
             switch (opcao) {
                 case 1:
@@ -51,6 +52,9 @@ public class Main {
                     do{
                         System.out.println("Digite a matricula do aluno:");
                         matricula = scanner.nextLine();
+                        if(matricula.equals("0")){
+                            break;
+                        }
                         Menu.criarGrupoHandler(alunos, grupos, grupo, matricula);
                     } while ( matricula != "0" );
                     System.out.println("Digite a nota do grupo:");

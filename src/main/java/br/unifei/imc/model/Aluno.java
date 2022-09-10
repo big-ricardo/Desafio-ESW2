@@ -12,6 +12,8 @@ public class Aluno {
 
     private double nota;
 
+    public Aluno() {
+    }
     public Aluno(final String matricula, final String nome) {
         this.matricula = matricula;
         this.nome = nome;
