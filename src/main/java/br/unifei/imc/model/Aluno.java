@@ -1,5 +1,9 @@
 package br.unifei.imc.model;
 
+import br.unifei.imc.utils.CsvFile;
+
+import java.util.List;
+
 public class Aluno {
 
     private String matricula;
@@ -9,8 +13,6 @@ public class Aluno {
         this.matricula = matricula;
         this.nome = nome;
     }
-
-    //mostrar listas de alunos
 
     public String getMatricula() {
         return matricula;
@@ -26,5 +28,13 @@ public class Aluno {
 
     public void setNome(final String nome) {
         this.nome = nome;
+    }
+
+    public String printInfos(){
+        return String.format(this.nome + " | " + this.matricula);
+    }
+
+    public static void listStudents(List<Aluno> alunos) {
+        alunos.forEach(aluno -> System.out.println(aluno.printInfos()));
     }
 }

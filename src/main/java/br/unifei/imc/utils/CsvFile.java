@@ -1,5 +1,5 @@
 package br.unifei.imc.utils;
-import br.unifei.imc.model.Game;
+import br.unifei.imc.model.Aluno;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 
@@ -10,23 +10,24 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CSV {
-    public static List<Pessoa> read(String path) {
-        /*try {
+public class CsvFile {
+    public static List<Aluno> readFile(String path) {
+        try {
             Reader reader = Files.newBufferedReader(Path.of(path));
-            CsvToBean<Game> csvToBean = new CsvToBeanBuilder(reader)
-                    .withType(Game.class)
+            CsvToBean<Aluno> csvToBean = new CsvToBeanBuilder(reader)
+                    .withType(Aluno.class)
                     .withIgnoreLeadingWhiteSpace(true)
                     .build();
             return csvToBean.parse();
         } catch (IOException e) {
+            System.out.println("Não foi possível ler o arquivo...");
             e.printStackTrace();
         }
 
-        return new ArrayList<>();*/
+        return new ArrayList<>();
     }
 
-    public static void createFile(List<Pessoa> pessoas) {
+    public static void createFile(List<Aluno> pessoas) {
         /*File file = new File("pessoas.csv");
         FileWriter writer = null;
         try{
