@@ -1,5 +1,6 @@
 package br.unifei.imc.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Grupo {
@@ -8,7 +9,7 @@ public class Grupo {
     private Double nota;
 
     public Grupo(final List<Aluno> alunos, final Double nota) {
-        this.alunos = alunos;
+        this.alunos = new ArrayList<>();
         this.nota = nota;
     }
 
@@ -26,5 +27,9 @@ public class Grupo {
 
     public void setNota(final Double nota) {
         this.nota = nota;
+    }
+
+    public void addAluno(Aluno aluno){
+        alunos.add(aluno);
     }
 }
