@@ -49,6 +49,9 @@ public class Main {
                         matricula = scanner.nextLine();
                         Menu.criarGrupoHandler(alunos, grupos, grupo, matricula);
                     } while ( matricula != "0" );
+                    System.out.println("Digite a nota do grupo:");
+                    grupo.setNota(Double.valueOf(scanner.nextLine()));
+                    grupos.add(grupo);
                     break;
                 case 4:
                     System.out.println("Exportar dados no arquivo");

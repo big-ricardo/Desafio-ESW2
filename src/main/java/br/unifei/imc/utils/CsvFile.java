@@ -1,8 +1,11 @@
 package br.unifei.imc.utils;
 import br.unifei.imc.model.Aluno;
+import com.opencsv.CSVWriter;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
@@ -27,8 +30,8 @@ public class CsvFile {
         return new ArrayList<>();
     }
 
-    public static void createFile(List<Aluno> pessoas) {
-        /*File file = new File("pessoas.csv");
+    public static void createFile(List<Aluno> alunos) {
+        File file = new File("alunosegrupos.csv");
         FileWriter writer = null;
         try{
             writer = new FileWriter(file);
@@ -37,16 +40,16 @@ public class CsvFile {
 
             List<String[]> data = new ArrayList<>();
 
-            data.add(new String[] { "Id", "Nome", "Idade"});
-            for (Pessoa pessoa : pessoas) {
-                data.add(new String[] { pessoa.getId().toString(), pessoa.getNome(), pessoa.getIdade().toString()});
+            data.add(new String[] { "matricula", "nome", "nota"});
+            for (Aluno aluno : alunos) {
+                data.add(new String[] { aluno.getMatricula(), aluno.getNome(), aluno.getNota().toString()});
             }
 
             csvWriter.writeAll(data);
             csvWriter.close();
         } catch (Exception e){
             throw new RuntimeException(e);
-        }*/
+        }
     }
 
 }

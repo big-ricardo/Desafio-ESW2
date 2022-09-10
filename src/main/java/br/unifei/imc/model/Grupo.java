@@ -40,6 +40,9 @@ public class Grupo {
     }
 
     public void setNota(final Double nota) {
+        alunos.stream().forEach(aluno -> {
+            aluno.setNota(nota.toString());
+        });
         this.nota = nota;
     }
 
